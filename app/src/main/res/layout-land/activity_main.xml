@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <!-- ouput row -->
+
+    <EditText
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0.73"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="20sp" />
+
+
+    <!-- operand and input row -->
+
+    <TextView
+        android:id="@+id/operation"
+        android:layout_width="45dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/result"
+        android:layout_toLeftOf="@+id/new_number"
+        android:layout_weight="0.64"
+        android:background="@color/black"
+        android:paddingLeft="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:id="@+id/new_number"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/result"
+        android:layout_gravity="end"
+        android:layout_weight="0.42"
+        android:background="@color/black"
+        android:inputType="numberSigned|numberDecimal"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+
+
+    <!-- rad, deg, factorial row -->
+
+    <Button
+        android:id="@+id/rad_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_number"
+        android:layout_margin="2dp"
+        android:background="@color/gray"
+        android:text="RAD"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/rad_cover"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_number"
+        android:layout_margin="2dp"
+        android:background="@color/dipset"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/deg_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_number"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@+id/rad_btn"
+        android:background="@color/gray"
+        android:text="DEG"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/factorial"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_number"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@+id/deg_btn"
+        android:background="@color/gray"
+        android:text="x!"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/left_paren"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_number"
+        android:layout_margin="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@+id/factorial"
+        android:background="@color/notNumberColor"
+        android:text="("
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/right_paren"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_number"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/left_paren"
+        android:background="@color/notNumberColor"
+        android:text=")"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/percent"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_number"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/right_paren"
+        android:background="@color/notNumberColor"
+        android:text="%"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/clear_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_number"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/percent"
+        android:background="@color/notNumberColor"
+        android:text="ce"
+        android:textSize="20sp" />
+
+
+    <!-- inverse row -->
+
+    <Button
+        android:id="@+id/inverse_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rad_btn"
+        android:layout_margin="2dp"
+        android:background="@color/gray"
+        android:text="inv"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/sin_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deg_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@+id/inverse_btn"
+        android:background="@color/gray"
+        android:text="sin"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/ln_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/factorial"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@+id/sin_btn"
+        android:background="@color/gray"
+        android:text="ln"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/ln_inverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/factorial"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@+id/sin_btn"
+        android:background="@color/notNumberColor"
+        android:text="ln"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/num7"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/left_paren"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/ln_btn"
+        android:background="@color/dipset"
+        android:text="7"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/num8"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/right_paren"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num7"
+        android:background="@color/dipset"
+        android:text="8"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/num9"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/percent"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num8"
+        android:background="@color/dipset"
+        android:text="9"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/division_button"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/clear_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num9"
+        android:background="@color/notNumberColor"
+        android:text="/"
+        android:textSize="20sp" />
+
+    <!-- pi, cos, log row -->
+
+    <Button
+        android:id="@+id/pi_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inverse_btn"
+        android:layout_margin="2dp"
+        android:background="@color/gray"
+        android:text="pi"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/cos_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sin_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/pi_btn"
+        android:background="@color/gray"
+        android:text="cos"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/cos_inverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sin_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/pi_btn"
+        android:background="@color/notNumberColor"
+        android:text="cos-1"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/log_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ln_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/cos_btn"
+        android:background="@color/gray"
+        android:text="log"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/log_inverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ln_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/cos_btn"
+        android:background="@color/notNumberColor"
+        android:text="log"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+
+    <Button
+        android:id="@+id/num4"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num7"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/log_btn"
+        android:background="@color/dipset"
+        android:text="4"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/num5"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num8"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num4"
+        android:background="@color/dipset"
+        android:text="5"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/num6"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num9"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num5"
+        android:background="@color/dipset"
+        android:text="6"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/division_button"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num6"
+        android:background="@color/notNumberColor"
+        android:text="x"
+        android:textSize="20sp" />
+
+    <!-- e, tan, sq root row -->
+
+    <Button
+        android:id="@+id/e_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pi_btn"
+        android:layout_margin="2dp"
+        android:background="@color/gray"
+        android:text="e"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/tan_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cos_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/e_btn"
+        android:background="@color/gray"
+        android:text="tan"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/tan_inverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cos_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/e_btn"
+        android:background="@color/notNumberColor"
+        android:text="tan-1"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/sq_root"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/tan_btn"
+        android:background="@color/gray"
+        android:text="sq rt"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/num1"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num4"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/sq_root"
+        android:background="@color/dipset"
+        android:text="1"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/num2"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num5"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num1"
+        android:background="@color/dipset"
+        android:text="2"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/num3"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/num6"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num2"
+        android:background="@color/dipset"
+        android:text="3"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multiply"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num3"
+        android:background="@color/notNumberColor"
+        android:text="-"
+        android:textSize="20sp" />
+
+    <!-- ans, exp, exponent row -->
+
+    <Button
+        android:id="@+id/ans_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/e_btn"
+        android:layout_margin="2dp"
+        android:background="@color/gray"
+        android:text="ans"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/ans_inverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/e_btn"
+        android:layout_margin="2dp"
+        android:background="@color/notNumberColor"
+        android:text="rnd"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/exp_btn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tan_btn"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/ans_btn"
+        android:background="@color/gray"
+        android:text="exp"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/exponent"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sq_root"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/exp_btn"
+        android:background="@color/gray"
+        android:text="xy"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/exponent_inverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sq_root"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/exp_btn"
+        android:background="@color/notNumberColor"
+        android:text="y rt"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/num0"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/num1"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/exponent"
+        android:background="@color/dipset"
+        android:text="0"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/period"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/num2"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/num0"
+        android:background="@color/dipset"
+        android:text="."
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/equals"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/num3"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/period"
+        android:background="@color/dipset"
+        android:text="="
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/addition"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/minus"
+        android:layout_margin="2dp"
+        android:layout_toRightOf="@id/equals"
+        android:background="@color/notNumberColor"
+        android:text="+"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/sin_inverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sin_btn"
+        android:layout_alignBottom="@+id/sin_btn"
+        android:layout_alignLeft="@+id/sin_btn"
+        android:layout_alignStart="@+id/sin_btn"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/notNumberColor"
+        android:text="sin-1"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/deg_cover"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/deg_btn"
+        android:layout_alignStart="@+id/deg_btn"
+        android:layout_alignTop="@+id/deg_btn"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/notNumberColor" />
+
+    <Button
+        android:id="@+id/inverse_reverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/inverse_btn"
+        android:layout_alignBottom="@+id/inverse_btn"
+        android:layout_alignLeft="@+id/inverse_btn"
+        android:layout_alignStart="@+id/inverse_btn"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/numberColor"
+        android:text="inv"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/sq_root_inverse"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sq_root"
+        android:layout_alignBottom="@+id/sq_root"
+        android:layout_alignLeft="@+id/sq_root"
+        android:layout_alignStart="@+id/sq_root"
+        android:background="@color/notNumberColor"
+        android:text="sqr"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>
