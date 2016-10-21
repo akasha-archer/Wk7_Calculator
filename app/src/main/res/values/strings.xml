@@ -13,11 +13,15 @@
     <string name="plus_sign">+</string>
     <string name="minus_sign">-</string>
     <string name="multiply_sign">x</string>
-    <string name="division_sign">/</string>
+    <string name="division_sign">÷</string>
     <string name="decimal_sign">.</string>
     <string name="delete">DEL</string>
     <string name="percent">%</string>
     <string name="equals_sign">=</string>
     <string name="neg_and_positive">+/-</string>
     <string name="clear">AC</string>
+
+    <string name="sq_root">√</string>
+    <string name="exponent">x^y</string>
+    <string name="pi">\u03c0</string>
 </resources>

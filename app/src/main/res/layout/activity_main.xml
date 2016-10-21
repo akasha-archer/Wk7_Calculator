@@ -68,7 +68,6 @@
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="@color/notNumberColor"
-
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/neg_and_positive"
@@ -81,7 +80,6 @@
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="@color/notNumberColor"
-
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/percent"
@@ -94,7 +92,6 @@
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="@color/notNumberColor"
-
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/division_sign"
@@ -298,7 +295,6 @@
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="@color/dipset"
-
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/decimal_sign"
@@ -311,21 +307,21 @@
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="@color/dipset"
-
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/zero"
             android:textSize="21sp" />
 
         <Button
+            android:id="@+id/clear_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="@color/dipset"
-
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
+            android:text="@string/clear"
             android:textSize="21sp" />
 
         <Button
@@ -335,7 +331,6 @@
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="@color/notNumberColor"
-
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/equals_sign"

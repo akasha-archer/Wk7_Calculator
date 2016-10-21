@@ -11,7 +11,9 @@ public class Driver {
 
     public static void main(String[] args) {
 
-        calculateString("2^3+2^(-3)+2^3^(-4)");
+      //  MainActivity main = new MainActivity();
+
+        calculateString("20%100");
 
        // Expression e = new Expression("3*5");
         //mXparser.consolePrintln("Res: " + e.getExpressionString() + " = " + e.calculate());
@@ -25,5 +27,3 @@ public class Driver {
     }
 
 }
-
-
