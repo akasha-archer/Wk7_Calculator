@@ -223,19 +223,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return result;
     }
 
-
-//    private String removeTrailingZero(String formattingInput){
-//        if(!formattingInput.contains(".")){
-//            return formattingInput;
-//        }
-//        int dotPosition = formattingInput.indexOf(".");
-//        String newValue = formattingInput.substring(dotPosition, formattingInput.length());
-//        if(newValue.equals(".0")){
-//            return formattingInput.substring(0, dotPosition);
-//        }
-//        return formattingInput;
-//    }
-
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -271,7 +258,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         subtractionButton.setOnClickListener(this);
         additionButton.setOnClickListener(this);
         clearButton.setOnClickListener(this);
-//        deleteButton.setOnClickListener(this);
         percentButton.setOnClickListener(this);
 
     }
@@ -569,5 +555,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 //        super.onSaveInstanceState(outState);
 //    }
-
 
