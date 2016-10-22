@@ -1,6 +1,5 @@
 package nyc.c4q.helenchan.hw_calculator;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -9,20 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.mariuszgromada.math.mxparser.Expression;
-import org.mariuszgromada.math.mxparser.mXparser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Context context;
     private SharedPreferences prefs;
 
     private String currentInput = "";
     private String inputToCalculate = "";
-    private boolean isInverse = false;
 
     private Button num1Button;
     private Button num2Button;
@@ -41,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button divisionButton;
     private Button equalsButton;
     private Button clearButton;
-    private Button deleteButton;
-    private Button negButton;
     private Button percentButton;
     private EditText calcResult;
     private EditText calcInput;
@@ -102,8 +95,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         multiplyButton = (Button) findViewById(R.id.multiply);
         divisionButton = (Button) findViewById(R.id.division_button);
         equalsButton = (Button) findViewById(R.id.equals);
-        deleteButton = (Button) findViewById(R.id.delete_button);
-        negButton = (Button) findViewById(R.id.neg_button);
         percentButton = (Button) findViewById(R.id.percent);
 
         //scientific buttons
@@ -134,14 +125,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ansInv = (Button) findViewById(R.id.ans_inverse);
         exponentInv = (Button) findViewById(R.id.exponent_inverse);
 
-
         // input and answer fields
         calcInput = (EditText) findViewById(R.id.new_number);
         calcResult = (EditText) findViewById(R.id.result);
 
-
-       checkOrientation();
-
+        checkOrientation();
         calcResult.setText("");
     }
 
@@ -218,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public double calculateString(String equation) {
         Expression e = new Expression(equation);
-      //  mXparser.consolePrintln("Res: " + e.getExpressionString() + " = " + e.calculate());
+      //mXparser.consolePrintln("Res: " + e.getExpressionString() + " = " + e.calculate());
         double result = e.calculate();
         return result;
     }
@@ -239,7 +227,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void activateButtons() {
-
         num0Button.setOnClickListener(this);
         num1Button.setOnClickListener(this);
         num2Button.setOnClickListener(this);
@@ -263,34 +250,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void activateScientific() {
-
         activateButtons();
+        leftParen.setOnClickListener(this);
+        rightParen.setOnClickListener(this);
+        degree.setOnClickListener(this);
+        radian.setOnClickListener(this);
+        inverse.setOnClickListener(this);
+        sin.setOnClickListener(this);
+        baseLog.setOnClickListener(this);
+        cos.setOnClickListener(this);
+        log.setOnClickListener(this);
+        tan.setOnClickListener(this);
+        sqRoot.setOnClickListener(this);
+        ans.setOnClickListener(this);
+        exponent.setOnClickListener(this);
 
-//        leftParen.setOnClickListener(this);
-  //      rightParen.setOnClickListener(this);
-//        degree.setOnClickListener(this);
-//        radian.setOnClickListener(this);
-//        inverse.setOnClickListener(this);
-//        sin.setOnClickListener(this);
-//        baseLog.setOnClickListener(this);
-//        cos.setOnClickListener(this);
-//        log.setOnClickListener(this);
-//        tan.setOnClickListener(this);
-//        sqRoot.setOnClickListener(this);
-//        ans.setOnClickListener(this);
-//        exponent.setOnClickListener(this);
-//
-//        degreeCover.setOnClickListener(this);
-//        radianCover.setOnClickListener(this);
-//        inverseInv.setOnClickListener(this);
-//        sinInv.setOnClickListener(this);
-//        baseLogInv.setOnClickListener(this);
-//        cosInv.setOnClickListener(this);
-//        logInv.setOnClickListener(this);
-//        tanInv.setOnClickListener(this);
-//        sqRootInv.setOnClickListener(this);
-//        ansInv.setOnClickListener(this);
-//        exponentInv.setOnClickListener(this);
+        degreeCover.setOnClickListener(this);
+        radianCover.setOnClickListener(this);
+        inverseInv.setOnClickListener(this);
+        sinInv.setOnClickListener(this);
+        baseLogInv.setOnClickListener(this);
+        cosInv.setOnClickListener(this);
+        logInv.setOnClickListener(this);
+        tanInv.setOnClickListener(this);
+        sqRootInv.setOnClickListener(this);
+        ansInv.setOnClickListener(this);
+        exponentInv.setOnClickListener(this);
 
     }
 
@@ -300,176 +285,148 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.num9:
-                currentInput += "9";
                 inputToCalculate += "9";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num8:
-                currentInput += "8";
                 inputToCalculate += "8";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num7:
-                currentInput += "7";
                 inputToCalculate += "7";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num6:
-                currentInput += "6";
                 inputToCalculate += "6";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num5:
-                currentInput += "5";
                 inputToCalculate += "5";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num4:
-                currentInput += "4";
                 inputToCalculate += "4";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num3:
-                currentInput += "3";
                 inputToCalculate += "3";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num2:
-                currentInput += "2";
                 inputToCalculate += "2";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num1:
-                currentInput += "1";
                 inputToCalculate += "1";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.num0:
-                currentInput += "0";
                 inputToCalculate += "0";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.percent:
-                currentInput += "%";
                 inputToCalculate += "%";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.division_button:
-                currentInput += "/";
                 inputToCalculate += "/";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.multiply:
-                currentInput += "*";
                 inputToCalculate += "*";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.addition:
-                currentInput += "+";
                 inputToCalculate += "+";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.minus:
-                currentInput += "-";
                 inputToCalculate += "-";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.period:
-                currentInput += ".";
                 inputToCalculate += ".";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.left_paren:
-                currentInput += "(";
                 inputToCalculate += "(";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.right_paren:
-                currentInput += ")";
                 inputToCalculate += ")";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.factorial:
-                currentInput += "!";
                 inputToCalculate += "!";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.sin_btn:
-                currentInput += "sin(";
                 inputToCalculate += "sin(";
                 calcInput.setText(inputToCalculate);
                 break;
 
+
             case R.id.cos_btn:
-                currentInput += "cos(";
                 inputToCalculate += "cos(";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.tan_btn:
-                currentInput += "tan(";
                 inputToCalculate += "tan(";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.log_btn:
-                currentInput += "log(";
                 inputToCalculate += "log(";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.ln_btn:
-                currentInput += "ln(";
                 inputToCalculate += "ln(";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.sq_root:
-                currentInput += "√";
                 inputToCalculate += "√";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.pi_btn:
-                currentInput += "π";
-                inputToCalculate += "π";
+                inputToCalculate += "pi";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.exponent:
-                currentInput += "^";
                 inputToCalculate += "^";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.exp_btn:
-                currentInput += "E";
                 inputToCalculate += "E";
                 calcInput.setText(inputToCalculate);
                 break;
 
             case R.id.e_btn:
-                currentInput += "E";
-                inputToCalculate += "E";
+                inputToCalculate += "e";
                 calcInput.setText(inputToCalculate);
                 break;
 
@@ -481,6 +438,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.equals:
                 double answer = calculateString(inputToCalculate);
                 calcResult.setText("Ans = " + answer);
+                break;
+
+            case R.id.sin_inverse:
+                inputToCalculate += "asin(";
+                calcInput.setText(inputToCalculate);
+                break;
+
+            case R.id.ln_inverse:
+                inputToCalculate += "e^";
+                calcInput.setText(inputToCalculate);
+                break;
+
+            case R.id.cos_inverse:
+                inputToCalculate += "acos(";
+                calcInput.setText(inputToCalculate);
+                break;
+
+            case R.id.log_inverse:
+                inputToCalculate += "10^";
+                calcInput.setText(inputToCalculate);
+                break;
+
+            case R.id.tan_inverse:
+                inputToCalculate += "atan(";
+                calcInput.setText(inputToCalculate);
+                break;
+
+            case R.id.sq_root_inverse:
+                inputToCalculate += "^2";
+                calcInput.setText(inputToCalculate);
+                break;
+
+
+            case R.id.ans_inverse:
+                double rand = Math.random();
+                inputToCalculate += String.valueOf(rand);
+                calcInput.setText("Ans = " + String.valueOf(rand));
                 break;
 
             case R.id.rad_btn:
@@ -507,52 +501,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 inverseRevClicked();
                 break;
 
-            /* clicking inverse buttons restores non-inverse state */
-            case R.id.sin_inverse:
-            case R.id.ln_inverse:
-            case R.id.cos_inverse:
-            case R.id.log_inverse:
-            case R.id.tan_inverse:
-            case R.id.sq_root_inverse:
-            case R.id.ans_inverse:
-            case R.id.exponent_inverse:
-                inverseRevClicked();
-                break;
-
         }
 
     }
 }
-
-
-//    @Override
-//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        pendingOperation = savedInstanceState.getString(STATE_PENDING_OPERATION);
-//        operand1 = savedInstanceState.getDouble(STATE_OPERAND1);
-//        displayOperation.setText(pendingOperation);
-//    }
-
-
-  /* variables to hold operands and type of calculations
-       using the class instance Double so the value can be set to null to indicate that there
-       isn't a value yet
-
-    private Double operand1 = null;
-    private String pendingOperation = "=";
-    private static final String STATE_PENDING_OPERATION = "PendingOperation";
-    private static final String STATE_OPERAND1 = "Operand1";
-
- */
-
-
-
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState) {
-//        outState.putString(STATE_PENDING_OPERATION, pendingOperation);
-//        if (operand1 != null) {
-//            outState.putDouble(STATE_OPERAND1, operand1);
-//        }
-//        super.onSaveInstanceState(outState);
-//    }
-
