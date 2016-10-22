@@ -265,6 +265,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ans.setOnClickListener(this);
         exponent.setOnClickListener(this);
 
+        /* scientific buttons */
         degreeCover.setOnClickListener(this);
         radianCover.setOnClickListener(this);
         inverseInv.setOnClickListener(this);
@@ -276,7 +277,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sqRootInv.setOnClickListener(this);
         ansInv.setOnClickListener(this);
         exponentInv.setOnClickListener(this);
-
     }
 
 
