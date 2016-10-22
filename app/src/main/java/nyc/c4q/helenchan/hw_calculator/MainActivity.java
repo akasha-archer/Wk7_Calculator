@@ -379,6 +379,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calcInput.setText(inputToCalculate);
                 break;
 
+            /* scientific buttons */
             case R.id.sin_btn:
                 inputToCalculate += "sin(";
                 calcInput.setText(inputToCalculate);
